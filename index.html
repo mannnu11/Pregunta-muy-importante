@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pregunta importante</title>
+    <style>
+      button {
+        position: absolute;
+        top: 50%;
+        font-size: 20px;
+        padding: 10px 20px;
+      }
+      #yes-button {
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+      #no-button {
+        left: 60%;
+        transform: translate(-50%, -50%);
+      }
+      #question {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="question">¿Te queres casar conmigo?</h1>
+    <button id="yes-button" onclick="location.href='felicidades.html'">Sí</button>
+    <button id="no-button">No</button>
+    <script>
+      const noButton = document.getElementById("no-button");
+      noButton.addEventListener("mousedown", () => {
+        const newLeft = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const newTop = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.left = `${newLeft}px`;
+        noButton.style.top = `${newTop}px`;
+      });
+    </script>
+  </body>
+</html>
+
+
